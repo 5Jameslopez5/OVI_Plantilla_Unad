@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
-<title>Vinculación de BD a una página con PHP</title>
+<title>Base de Datos | OVI. Vinculación de BD a una página con PHP </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-language" content="es" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
@@ -20,14 +20,12 @@
 <p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
 <div id="header" ><div id="headerContent">OVI. Vinculación de BD a una página con PHP</div></div>
 <div id="siteNav">
-<ul>
-   <!--DESDE AQUI COMIENZA EL MENU TENER EN CUENTA QUE CADA ETIQUETA <li> ES UN UTEM DEL MENU Y LA ETIQUETA <lu> ES UN SUBMENU DE LA ETIQUETA <li> ANTERIOR A ESTA  -->
 
-   <li id="active"><a href="index.html" class="active daddy main-node">Inicio</a></li>  
+  <li id="active"><a href="index.html" class="active daddy main-node">Inicio</a></li>  
    <li><a href="introduccion.html" class="daddy">Introduccion</a>  
    
    </li>
-   <li><a href="Herramientasautil.html" class="daddy">Herramientas a Utilizar</a>
+  <li><a href="Herramientasautil.html" class="daddy">Herramientas a Utilizar</a>
    <ul class="other-section">
       <li><a href="Herramienta_xampp.html" class="no-ch">Herramienta Xampp</a></li>
       <li><a href="vdeo_instalacin_xampp.html" class="no-ch">Vídeo Instalación Xampp</a></li>
@@ -39,8 +37,8 @@
       <li><a href="Basedatos.html" class="daddy">Base de Datos</a>
       <ul class="other-section">
       <li><a href="Basedatos_mysql.html" class="no-ch">Base de Datos MySql</a></li>
-      <li><a href="Basedatos_creacionbd" class="no-ch">Creacion de DB MySql</a></li>
-      <li><a href="Basedatos_video" class="no-ch">Video Consultas Mysql</a></li>
+      <li><a href="Basedatos_creacionbd.html" class="no-ch">Creacion de DB MySql</a></li>
+      <li><a href="Basedatos_video.html" class="no-ch">Video Consultas Mysql</a></li>
    </ul>
    </li>
       <li><a class="daddy">Conexion PHP-Mysql</a>
@@ -58,53 +56,44 @@
 </div>
 <div id='topPagination'>
 <div class="pagination noprt">
-<a href="Herramientasautil.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+<a href="Herramientasautil.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="Basedatos_mysql.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
 </div>
 </div>
 <div id="main-wrapper">
 <div id="main"><a name="main"></a>
-<div id="nodeDecoration"><h1 id="nodeTitle">Introduccion</h1></div>
-<p><span>
-
-¿Que es PHP?
-<br><br>
-PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de código 
-abierto muy popular especialmente adecuado para el desarrollo web y que puede ser
- incrustado en HTML. 
- <img src="http://devstickers.com/assets/img/pro/v5kl.png" align="right">
-<br><br>
-Bien, pero ¿qué significa realmente? Un ejemplo nos aclarará las cosas: 
-Ejemplo de Hola Mundo
+<div id="nodeDecoration"><h1 id="nodeTitle">CREACION DE BASE DE DATOS</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id2">
+<div class="iDevice emphasis0">
+<div id="ta2_85" class="block iDevice_content">
+<p>Crear una base de datos es un proceso muy sencillo el cual se puede ejecutar en PhpMyadmin de dos diferentes formas, una es por la interfaz del PhpMyadmin y otro es por consola, en caso de ejecutarse por consola, que en la mayoria de los casos es la mas optima para un desarrollador, se debe ejecutar el siguiente codigo: </p>
 
 <pre class="fondocodigo">
-    &lt;html&gt;
-      &lt;head&gt;
-        &lt;title&gt;Ejemplo&lt;/title&gt; 
-       &lt;/head&gt;
-       &lt;body&gt;
-          &lt;?php&gt;
-            &lt;echo "¡Hola Unadistas, soy un script de PHP!";&gt;
-        &lt;?&gt;
-       &lt;/body&gt; 
-    &lt;/html&gt; 
-</pre>
+    &lt;mysql> CREATE DATABASE unadistas &gt;       
+</pre><small>Donde "unadistas" es el nombre de la base de datos</small>
+<p>La sintaxis basica de mysql se debe tener en cuenta para realizar todo tipo de procesos en la gestion de una base de datos, aqui se presentan los comando basicos que luego se explicaran en el <a href="Basedatos_video.html">video</a> , que explica el tema de manera practica.</p>
 
-¿Qué es MySQL?
-<br><br>
-Es un sistema de gestión de bases de datos relacional
- desarrollado bajo licencia dual GPL/Licencia 
-comercial por Oracle Corporation
- y está considerada como la base datos open source 
-más popular del mundo, y una de las más populares en general junto a 
-Oracle y Microsoft SQL Server, sobre todo para entornos de desarrollo web.
- 
- </span></p>
+Crear una Tabla:<pre class="fondocodigo">    &lt;create table estudiantes(nombre varchar(20)) &gt; </pre> <small>Donde "estudiantes" es el nombre de la tabla y lo que esta dentro del parentesis el nombre del campo o campos y su respectivo tipo de dato</small>
+
+<p>Seleccionar Registro:<pre class="fondocodigo" >&lt;select *from estudiantes&gt;</pre><small>Donde "estudiantes" es el nombre de la tabla y el asterisco(*) equivale a seleccionar todos los datos</small></p>
+
+
+<p>Insertar Registro:<pre class="fondocodigo">&lt;Insert into tb estudiantes(nombre) values("Pedro")&gt;</pre><small>Donde "estudiantes" es el nombre de la tabla y values los valores el valor o valores a insertar dependiendo de los campos</small></p>
+
+<p>Actualizar Registro:<pre class="fondocodigo">&lt;Upate tb estudiantes set nombre="JUAN" where nombre="Pedro" &gt;</pre><small>Donde "estudiantes" es el nombre de la tabla, set y el campo que se va a actualizar, y where es donde se aplica el cambio</small></p>
+
+<p>Eliminar Registro:<pre class="fondocodigo">&lt;Delete from tb estudiantes  where nombre="Pedro" &gt;</pre><small>Donde "estudiantes" es el nombre de la tabla,  y where es donde se aplica la eliminacion del registro</small></p>
+
+</div>
+</div>
+</div>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="CUSANA CORPORATION">Licencia CUSANA CORPORATION</a></p>
+</div>
 </div>
 </div>
 <div id="siteFooter"> <img src="https://informacion.unad.edu.co/images/acerca%20de%20la%20unad/simbolos/logo_vertical.png" align="right"><br><br><br>Desarrollado por: Grupo 301122-14 del curso Diseño de Sitios Web<br>
 UNIVERSIDAD NACIONAL ABIERTA Y A DISTANCIA (UNAD)<br>
 <br>
-
 <div class="homeRedes">
 <a title="Síguenos en Twitter como @universidadUNAD" href="http://twitter.com/UniversidadUNAD">
 <img alt="Twitter" src="https://www.asturnatura.com/images/social-icons/twitter40x40.png" /></a>
@@ -114,9 +103,6 @@ UNIVERSIDAD NACIONAL ABIERTA Y A DISTANCIA (UNAD)<br>
 <img alt="Facebook"  src="https://survley.com/assets/img/fb-logo.png" /></a>
 <a title="Únete a FlickR" href="https://www.flickr.com/photos/universidadunad"><img alt="FlickR"  src="http://www.sassuolocalcio.it/assets/images/buttons/flickr.jpg" /></a>
 </div>
-
 <!--<h1>Universidad Nacional Abierta y a Distancia</h1>-->
-
-
 <div id="siteFooter"Universidad Nacional Abierta y a Distancia UNAD - (2017)  </div></div>
 <script type="text/javascript" src="_style_js.js"></script></body></html>
